@@ -6,7 +6,8 @@ const code = `
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+      .replace(/'/g, "&#039;")
+      .replace(/@/g, "\\@");
   };
   let input = document.createElement("input");
   input.value = '[' + escapeHtml(document.title) + '](' + window.location.href + ')';
